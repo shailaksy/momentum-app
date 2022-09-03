@@ -1,0 +1,70 @@
+#quote-section {
+    margin: 2% 5%;
+    cursor: pointer;
+    position: relative;
+}
+
+#quote-section i {
+    font-size: 3vh;
+}
+
+#quote-menu {
+    padding: 2%;
+    position: absolute;
+    background: #232323;
+    left: 5%;
+    bottom: -20%;
+    width: 58px;
+    height: auto;
+    border-radius: 20%;
+    z-index: 9;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom left;
+}
+
+#quote-section:hover #quote-menu {
+    transform: scale(1);
+}
+
+#quote-menu li {
+    list-style-type: none;
+    padding: 20%;
+    border-radius: 18%;
+    width: 100%;
+    text-align: left;
+}
+
+#quote-menu li:hover {
+    background: #474747;
+}
+
+#quote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#quote-container span,
+#quote-container p {
+    padding: 0.5%;
+    text-align: center;
+}
+
+#quote {
+    font-style: italic;
+    position: relative;
+}
+
+#author {
+    display: none;
+}
+
+#quote-container input[type=text] {
+    width: 72%;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    display: none;
+}

@@ -1,0 +1,41 @@
+#todo-section {
+    display: flex;
+    margin-right: 5%;
+    flex-direction: column-reverse;
+}
+
+#todo-title {
+    display: flex;
+    padding: 2%;
+    justify-content: flex-end;
+}
+
+#todo-toggle-container {
+    background-color: #23232381;
+    padding: 5%;
+    margin: 0 5%;
+    border-radius: 6%;
+}
+
+.todo-toggle {
+    display: none;
+}
+
+#todo-input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#todo-input-container input {
+    height: 100%;
+    width: 83%;
+    padding: 5px 10px;
+    outline: none;
+    color: white;
+    margin: 0;
+}
+
+.todo-list li {
+    padding: 8px;
+    display: flex;
+}

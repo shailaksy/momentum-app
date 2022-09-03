@@ -4,46 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <script src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="./sass/main/styles.css"></link>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <title>Momentum App</title>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     
-    <section>
-        <div id="weather">
+    <form name="form" id="form" method="get"></form>
 
+    <section id="top-section">
+        <div id="search">
+            <button id='search-btn-toggle' class='toggle'><i class='uil-search'></i></button> 
+            <div id="search-toggle-container" class="search-toggle">
+                <input type="text" id="search-input" placeholder="Search Google" autocomplete="off">
+                <a id="google" href="" target="_blank"></a> 
+            </div>
         </div>
     </section>
 
-    <section>
+    <section id="middle-section">
         <div id="clock">
-            time
         </div>
     
-        <div id="greeting">
-            good morning/aft/evening
+        <div id="greeting-container">
         </div>
     
-        <div id="name">
-            name
+        <div id="name-container">
+            <label for="name" id="name-label">What is your name?</label>
+            <br>
+            <input type="text" name="name" id="name" autocomplete="off">
         </div>
     
-        <div id="focus">
-            main focus
+        <div id="focus-container">
+            <label for="focus" id="focus-label">What is your main focus for today?</label>
+            <br>
+            <input type="text" name="focus" id="focus" autocomplete="off">
+            <p id="focus-value"></p>
         </div>
     </section>
 
-    <section>
-        <div id="quote">
-            quote
-            + add quote
+    <section id="bottom-section">
+
+        <section id="quote-section">
+            <div id="quote-settings">
+                <i class="uil uil-ellipsis-h"></i>
+                <ul id="quote-menu">
+                    <li><i class="uil-shuffle" id="shuffle"></i></li>
+                    <li><i class="uil-pen" id="custom"></i></li>
+                </ul>
+            </div>
+        </section>
+
+        <div id="quote-container">
+            <span id="quote">i love buko pie</span>
+            <p id="author">shai</p>
+            <input type="text" id="quote-input" placeholder="Custom Quote" autocomplete="off">
+            <p id="custom-quote"></p>
+            </div>
         </div>
 
-        <div id="to-do">
-            to do list
-        </div>
+        <section id="todo-section">
+            <div id="todo-title">
+                <button id='todo-btn-toggle' class="toggle">to do list</button>
+            </div>
+        
+            <div class="todo-container">
+                <div id="todo-toggle-container" class="todo-toggle">
+                    <div id="todo-input-container">
+                        <input type="text" id="todo-input" placeholder="New Todo" autocomplete="off" data-input-form>
+                        <button type="button" data-save-btn>save</button>
+                    </div>
+                    <ul class="todo-list" data-list>
+                        <li>
+                            <span>hopia 1</span>
+                                <div class='list-settings'>
+                                    <button type="button">edit</button>
+                                    <button type="button">delete</button>
+                                </div>
+                        </li>
+                        <li>
+                            <span>hopia 2</span>
+                                <div class='list-settings'>
+                                    <button type="button">edit</button>
+                                    <button type="button">delete</button>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </section>
 
+</form>
 </body>
 </html>

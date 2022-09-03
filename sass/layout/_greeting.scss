@@ -1,0 +1,16 @@
+#name-container,
+#greeting-container {
+    font-size: 6vh;
+    font-weight: 800;
+}
+
+#name-container input[type=text] {
+    font-size: 4vh; 
+}
+
+#name-container input[type=text] {
+    width: 80%;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+#middle-section {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+}
+
+#bottom-section {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    align-items: end;
+    height: 93vh;
+    padding-bottom: 1%;
+    font-size: 1.8vh;
+}

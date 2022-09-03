@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+body {
+    background: url(/assets/beach.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: white;
+}
+
+input[type=text] {
+    border: none; 
+    border-bottom: 2px solid white;
+    background: transparent;
+    outline: none;
+    color: white;
+}
+
+input::placeholder {
+    color: #aaaaaa;
+}
