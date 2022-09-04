@@ -78,12 +78,57 @@ input::placeholder {
     opacity: 0;
   }
 }
+#quote-menu {
+  padding: 2%;
+  position: absolute;
+  background: rgba(35, 35, 35, 0.5058823529);
+  left: 5%;
+  bottom: -20%;
+  width: 58px;
+  height: auto;
+  border-radius: 20%;
+  z-index: 9;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom left;
+}
+
+#quote-section:hover #quote-menu {
+  transform: scale(1);
+}
+
+#quote-menu li {
+  list-style-type: none;
+  padding: 20%;
+  border-radius: 18%;
+  width: 100%;
+  text-align: left;
+}
+
+#quote-menu li:hover {
+  background: rgba(71, 71, 71, 0.5058823529);
+}
+
 .toggle {
   background: transparent;
   color: white;
   border: none;
   cursor: pointer;
   outline: none;
+}
+
+.todo-container button {
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  font-size: 2vh;
+}
+
+.todo-container button:hover {
+  background-color: rgba(71, 71, 71, 0.5058823529);
 }
 
 #middle-section {
@@ -180,37 +225,6 @@ input::placeholder {
   font-size: 3vh;
 }
 
-#quote-menu {
-  padding: 2%;
-  position: absolute;
-  background: #232323;
-  left: 5%;
-  bottom: -20%;
-  width: 58px;
-  height: auto;
-  border-radius: 20%;
-  z-index: 9;
-  transform: scale(0);
-  transition: transform 0.3s ease;
-  transform-origin: bottom left;
-}
-
-#quote-section:hover #quote-menu {
-  transform: scale(1);
-}
-
-#quote-menu li {
-  list-style-type: none;
-  padding: 20%;
-  border-radius: 18%;
-  width: 100%;
-  text-align: left;
-}
-
-#quote-menu li:hover {
-  background: #474747;
-}
-
 #quote-container {
   display: flex;
   flex-direction: column;
@@ -249,15 +263,16 @@ input::placeholder {
 
 #todo-title {
   display: flex;
-  padding: 2%;
+  margin: 0 1%;
+  padding: 2.5%;
   justify-content: flex-end;
 }
 
 #todo-toggle-container {
   background-color: rgba(35, 35, 35, 0.5058823529);
   padding: 5%;
-  margin: 0 5%;
-  border-radius: 6%;
+  margin: 0 2.5%;
+  border-radius: 10px;
 }
 
 .todo-toggle {
@@ -267,6 +282,7 @@ input::placeholder {
 #todo-input-container {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 3%;
 }
 
 #todo-input-container input {
@@ -279,6 +295,10 @@ input::placeholder {
 }
 
 .todo-list li {
-  padding: 8px;
+  padding: 2%;
   display: flex;
+}
+
+.todo-list span {
+  padding: 8px;
 }/*# sourceMappingURL=styles.css.map */

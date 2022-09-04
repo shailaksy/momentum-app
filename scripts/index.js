@@ -195,7 +195,12 @@ let todos = [];
 let editedIndex = -1;
 
 const createTask = (item) => {
-    todos.push(item);
+    if (item === '' || null || undefined) {
+        toDoInput.value = '';
+        alert('Input a task.');
+    } else {
+        todos.push(item);
+    }
 }
 
 const displayList = () => {
@@ -207,15 +212,14 @@ const displayList = () => {
         const deleteBtn = document.createElement('button');
 
         newSpan.textContent = item;
-        editBtn.textContent = 'edit';
-        deleteBtn.textContent = 'delete';
+        editBtn.innerHTML = '<i class="uil-pen"></i>';
+        deleteBtn.innerHTML = '<i class="uil-trash-alt"></i>';
 
         editBtn.style.position = 'absolute';
         deleteBtn.style.position = 'absolute';
 
         editBtn.style.right = '7%';
-        deleteBtn.style.right = '3%';
-
+        deleteBtn.style.right = '3.5%';
 
         newLi.appendChild(newSpan);
         newLi.appendChild(editBtn);
@@ -235,6 +239,27 @@ const displayList = () => {
     })
 }
 
+function saveTask() {
+    if (editedIndex > -1) {
+        updateTask(toDoInput.value, editedIndex);
+        editedIndex = -1;
+    } else {
+        createTask(toDoInput.value);
+    }
+    toDoInput.value = '';
+    displayList();
+}
+
+saveBtn.addEventListener('click', () => {
+    saveTask();
+})
+
+toDoInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        saveTask();
+    }
+})
+
 const updateTask = (updatedItem, indx) => {
     todos[indx] = updatedItem;
 }
@@ -243,20 +268,4 @@ const deleteTask = (indx) => {
     todos = todos.filter((_, index) => index !== indx);
 }
 
-saveBtn.addEventListener('click', () => {
-    if (editedIndex > -1) {
-        updateTask(toDoInput.value, editedIndex);
-        editedIndex = -1;
-        toDoInput.value = '';
-        displayList();
-    } else {
-        createTask(toDoInput.value);
-        toDoInput.value = '';
-        displayList();
-    }
-    
-})
-
 displayList();
-
-// enter button also should work
