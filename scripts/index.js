@@ -1,6 +1,27 @@
-//////////////////
+///// BACKGROUND /////
+
+window.onload = () => {
+    const bgImages = [
+        './assets/beach.jpg', 
+        './assets/bread.jpg',
+        './assets/disco.jpg', 
+        './assets/flower.jpg',
+        './assets/market.jpg',
+        './assets/monet.jpg',
+        './assets/moon.jpg',
+        './assets/otter.jpg',
+        './assets/rabbit.jpg',
+        './assets/roller.jpg'
+        ]
+    const bgImage = bgImages[Math.floor(Math.random()*bgImages.length)];
+    document.getElementsByTagName('body')[0].style.background = "url('" + bgImage + "')";
+    document.getElementsByTagName('body')[0].style.backgroundSize = "cover";
+    document.getElementsByTagName('body')[0].style.backgroundPosition = "center center";
+    document.getElementsByTagName('body')[0].style.backgroundAttachment = "fixed";
+    document.getElementsByTagName('body')[0].style.backgroundRepeat = "no-repeat";
+}
+
 ///// SEARCH /////
-//////////////////
 
 const search = document.getElementById('search');
 const searchInputField = document.getElementById('search-input');
@@ -13,6 +34,7 @@ searchInputField.addEventListener("keyup", function(event){
         console.log(event.target.value);
         googleSearch.href = `https://www.google.com/search?q=${event.target.value}`;
         googleSearch.click();
+        searchInputField.value = '';
     }
 })
 
@@ -21,9 +43,7 @@ searchToggleBtn.addEventListener("click", function(event) {
     searchContainerToggle.style.animation = "opacity-fade-in 0.3s";
 });
 
-/////////////////
 ///// CLOCK /////
-/////////////////
 
 const now = new Date();
 
@@ -37,9 +57,7 @@ function displayTime(){
 
 setInterval(displayTime(), 1000);
 
-////////////////////
 ///// GREETING /////
-////////////////////
 
 const form = document.getElementById('form');
 const nameInputField = document.getElementById('name');
@@ -77,9 +95,7 @@ function displayGreeting(displayName){
     }
 }
 
-/////////////////
 ///// FOCUS /////
-/////////////////
 
 const focusInputField = document.getElementById('focus');
 
@@ -101,9 +117,7 @@ function displayFocus(focusItem) {
     }
 }
 
-//////////////////
 ///// QUOTES /////
-//////////////////
 
 const quoteDisplay = document.getElementById('quote');
 const authorDisplay = document.getElementById('author');
@@ -175,9 +189,7 @@ quoteInputField.addEventListener("keyup", function(event){
     }
 })
 
-/////////////////////
 ///// TODO LIST /////
-/////////////////////
 
 const toDoToggle = document.querySelector("#todo-btn-toggle");
 const toDoContainerToggle = document.querySelector("#todo-toggle-container");

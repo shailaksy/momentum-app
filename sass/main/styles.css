@@ -6,10 +6,6 @@
 }
 
 body {
-  background: url(/assets/beach.jpg) no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
   color: white;
 }
 
