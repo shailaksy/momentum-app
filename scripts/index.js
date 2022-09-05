@@ -1,4 +1,4 @@
-///// BACKGROUND /////
+///// BACKGROUND
 
 window.onload = () => {
     const bgImages = [
@@ -21,7 +21,7 @@ window.onload = () => {
     document.getElementsByTagName('body')[0].style.backgroundRepeat = "no-repeat";
 }
 
-///// SEARCH /////
+///// SEARCH
 
 const search = document.getElementById('search');
 const searchInputField = document.getElementById('search-input');
@@ -43,7 +43,7 @@ searchToggleBtn.addEventListener("click", function(event) {
     searchContainerToggle.style.animation = "opacity-fade-in 0.3s";
 });
 
-///// CLOCK /////
+///// CLOCK
 
 const now = new Date();
 
@@ -55,9 +55,9 @@ function displayTime(){
     document.getElementById('clock').innerHTML = time; 
 }
 
-setInterval(displayTime(), 1000);
+setInterval(displayTime(), 200);
 
-///// GREETING /////
+///// GREETING
 
 const form = document.getElementById('form');
 const nameInputField = document.getElementById('name');
@@ -69,9 +69,11 @@ let greeting = "";
 nameInputField.addEventListener("keyup", function(event){
     if (event.key === 'Enter'){
         localStorage.setItem('name', nameInputField.value);
-        console.log(displayGreeting(localStorage.getItem("name")));
+        displayGreeting(nameInputField.value);
         }
 })
+
+displayGreeting(localStorage.getItem("name"));
 
 function displayGreeting(displayName){
     if (displayName === null || undefined) {
@@ -95,17 +97,18 @@ function displayGreeting(displayName){
     }
 }
 
-///// FOCUS /////
+///// FOCUS
 
 const focusInputField = document.getElementById('focus');
 
 focusInputField.addEventListener("keyup", function(event){
-    console.log(event.target.value);
     if (event.key === 'Enter'){
         localStorage.setItem('focus', focusInputField.value);
-        console.log(displayFocus(localStorage.getItem("focus")));
+        displayFocus(focusInputField.value);
     }
 })
+
+displayFocus(localStorage.getItem("focus"));
 
 function displayFocus(focusItem) {
     if (focusItem === null || undefined) {
@@ -117,7 +120,7 @@ function displayFocus(focusItem) {
     }
 }
 
-///// QUOTES /////
+///// QUOTES
 
 const quoteDisplay = document.getElementById('quote');
 const authorDisplay = document.getElementById('author');
@@ -129,8 +132,7 @@ document.getElementById('shuffle').addEventListener("click", () => {
     quoteDisplay.style.animation = "opacity-fade-in 0.5s";
 })
 
-generateQuote = () => {
-    const quotes = {
+let quotes = {
         "Frank Ocean": '"I let go of my claim on you, it\'s a free world"',
         "The Weeknd": '"You\'re in love with something bigger than love"',
         "SZA": '"Why you bother me when you know you don\'t want me?"',
@@ -145,12 +147,17 @@ generateQuote = () => {
         "Rihanna": '"She can beat me, but she cannot beat my outfit"',
         "Binay": '"ano ano ano ano say nyo natameme kayo ano"',
         "neverforget": "Ang Presidente, Leni Robredo! Bise Presidente, Kiko Pangilinan!"
-    };
+};
 
-    const authors = Object.keys(quotes);
-    const author = authors[Math.floor(Math.random() * authors.length)];
-    const quote = quotes[author];
+localStorage.setItem('quoteArr', JSON.stringify(quotes));
+quotes = JSON.parse(localStorage.getItem('quoteArr'));
 
+const authors = Object.keys(quotes);
+const author = authors[Math.floor(Math.random() * authors.length)];
+const quoteArr = Object.values(quotes);
+const quote = quotes[author];
+
+generateQuote = () => {
     document.getElementById("quote").textContent = quote;
     document.getElementById("author").textContent = author;
 
@@ -175,21 +182,27 @@ document.getElementById('custom').addEventListener("click", () => {
     quoteInputField.style.display = "block";
     quoteInputField.style.animation = "opacity-fade-in 0.5s";
     customQuote.style.display = "none";
+    customQuote.textContent = '';
     quoteDisplay.style.display = "none";
     authorDisplay.style.display = "none";
 })
 
 quoteInputField.addEventListener("keyup", function(event){
-    console.log(event.target.value);
     if (event.key === 'Enter'){
         quoteInputField.style.display = "none";
         customQuote.style.display = "block";
-        customQuote.innerHTML = event.target.value;
+        customQuote.innerHTML = quoteInputField.value;
         customQuote.style.animation = "opacity-fade-in 0.5s";
+        addCustomQuote(localStorage.getItem("name"), quoteInputField.value)
     }
 })
 
-///// TODO LIST /////
+function addCustomQuote(newAuthor, newQuote) {
+    authors.push(newAuthor);
+    quoteArr.push(newQuote);
+}
+
+///// TODO LIST
 
 const toDoToggle = document.querySelector("#todo-btn-toggle");
 const toDoContainerToggle = document.querySelector("#todo-toggle-container");
@@ -204,6 +217,8 @@ const saveBtn = document.querySelector('[data-save-btn]');
 const toDoList = document.querySelector('[data-list]');
 
 let todos = [];
+todos = JSON.parse(localStorage.getItem('todo'));
+
 let editedIndex = -1;
 
 const createTask = (item) => {
@@ -212,6 +227,7 @@ const createTask = (item) => {
         alert('Input a task.');
     } else {
         todos.push(item);
+        localStorage.setItem('todo', JSON.stringify(todos));
     }
 }
 
