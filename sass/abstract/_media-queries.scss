@@ -1,0 +1,29 @@
+@media screen and (orientation: portrait) {
+    
+    body #middle-section {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    body #clock {
+        font-size: 9vh;
+    }
+
+    body #greeting-container {
+        font-size: 5vh;
+        padding-top: 20px;
+    }
+
+    body #focus-container {
+        padding-top: 20px;
+    }
+
+    .todo-list li {
+        font-size: 1.3vh;
+    }
+
+}
