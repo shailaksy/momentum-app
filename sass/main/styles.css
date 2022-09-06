@@ -31,7 +31,7 @@ body #todo-title button {
     padding-bottom: 0;
   }
   body .todo-list span {
-    font-size: 1.3vh;
+    font-size: 2vh;
   }
   body #quote-menu i {
     font-size: 2vh;
@@ -144,7 +144,7 @@ input::placeholder {
   padding: 20%;
   border-radius: 18%;
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 #quote-menu li:hover {
@@ -216,6 +216,7 @@ input::placeholder {
 #clock {
   font-size: 15vh;
   font-weight: 900;
+  padding-bottom: 2%;
 }
 
 #name-container,
@@ -226,12 +227,9 @@ input::placeholder {
 
 #name-container input[type=text] {
   font-size: 4vh;
-}
-
-#name-container input[type=text] {
   width: 80%;
-  margin: 5px;
-  padding: 2px;
+  margin: auto;
+  padding: 5px 10px;
   text-align: center;
 }
 
@@ -248,8 +246,8 @@ input::placeholder {
 
 #focus-container input {
   width: 80%;
-  margin: 5px;
-  padding: 2px;
+  margin: auto;
+  padding: 5px 10px;
   text-align: center;
 }
 
@@ -274,6 +272,7 @@ input::placeholder {
 #quote-container p {
   padding: 0.5%;
   text-align: center;
+  font-size: 2vh;
 }
 
 #quote {
@@ -343,5 +342,5 @@ input::placeholder {
 
 .todo-list span {
   padding: 8px;
-  font-size: 1.5vh;
+  font-size: 2vh;
 }/*# sourceMappingURL=styles.css.map */

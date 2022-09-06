@@ -19,11 +19,13 @@ export const quoteDisplay = document.getElementById('quote');
 export const authorDisplay = document.getElementById('author');
 export const customQuote = document.getElementById('custom-quote');
 export const quoteInputField = document.getElementById('quote-input');
-export const authors = Object.keys(quotes);
-export const author = authors[Math.floor(Math.random() * authors.length)];
-export const quote = quotes[author];
+
 
 export function generateQuote() {
+    const authors = Object.keys(quotes);
+    const author = authors[Math.floor(Math.random() * authors.length)];
+    const quote = quotes[author];
+    
     document.getElementById("quote").textContent = quote;
     document.getElementById("author").textContent = author;
 

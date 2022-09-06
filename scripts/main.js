@@ -66,10 +66,6 @@ import {
     customQuote,
     quoteInputField,
     generateQuote,
-    quotes,
-    authors,
-    author,
-    quote
 } from './quotes.js';
 
 document.getElementById('shuffle').addEventListener("click", () => {
@@ -105,17 +101,17 @@ quoteInputField.addEventListener("keyup", function(event){
     }
 })
 
+//////
+
 import {
     toDoToggle,
     toDoContainerToggle,
     toDoInput,
     saveBtn,
-    createTask,
+    toDoList,
     displayList,
-    saveTask,
-    updateTask,
-    deleteTask
-} from './todolist.js';
+    saveTask
+} from './todolist.js'
 
 toDoToggle.addEventListener("click", function(event) {
     toDoContainerToggle.classList.toggle("todo-toggle");

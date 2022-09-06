@@ -4,7 +4,15 @@ export const toDoInput = document.querySelector('[data-input-form]');
 export const saveBtn = document.querySelector('[data-save-btn]');
 export const toDoList = document.querySelector('[data-list]');
 
-export const createTask = (item) => {
+let todos = [];
+
+if(JSON.parse(localStorage.getItem('todo'))) {
+    todos = JSON.parse(localStorage.getItem('todo'))
+}
+
+let editedIndex = -1;
+
+const createTask = (item) => {
     if (item === '' || null || undefined) {
         toDoInput.value = '';
         alert('Input a task.');
@@ -13,10 +21,6 @@ export const createTask = (item) => {
         localStorage.setItem('todo', JSON.stringify(todos));
     }
 }
-
-let todos = [];
-todos = JSON.parse(localStorage.getItem('todo'));
-let editedIndex = -1;
 
 export const displayList = () => {
     toDoList.innerHTML = '';
@@ -54,6 +58,15 @@ export const displayList = () => {
     })
 }
 
+const updateTask = (updatedItem, indx) => {
+    todos[indx] = updatedItem;
+    localStorage.setItem('todo', JSON.stringify(todos));
+}
+
+const deleteTask = (indx) => {
+    todos = todos.filter((_, index) => index !== indx);
+}
+
 export function saveTask() {
     if (editedIndex > -1) {
         updateTask(toDoInput.value, editedIndex);
@@ -63,12 +76,4 @@ export function saveTask() {
     }
     toDoInput.value = '';
     displayList();
-}
-
-export const updateTask = (updatedItem, indx) => {
-    todos[indx] = updatedItem;
-}
-
-export const deleteTask = (indx) => {
-    todos = todos.filter((_, index) => index !== indx);
 }
