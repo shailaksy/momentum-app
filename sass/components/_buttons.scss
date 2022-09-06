@@ -13,6 +13,10 @@
     transform-origin: bottom left;
 }
 
+#quote-section i {
+    font-size: 3vh;
+}
+
 #quote-section:hover #quote-menu {
     transform: scale(1);
 }

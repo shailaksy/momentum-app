@@ -22,8 +22,33 @@
         padding-top: 20px;
     }
 
-    .todo-list li {
+    body #search {
+        margin: 2% 3%;
+    }
+
+    body #bottom-section {
+        margin: 0 2%;
+    }
+
+    body #quote-container,
+    body #todo-title button {
+        font-size: 1.7vh;
+    }
+
+    body #todo-input-container {
+        padding-bottom: 0;
+    }
+
+    body .todo-list span {
         font-size: 1.3vh;
+    }
+
+    body #quote-menu i {
+        font-size: 2vh;
+    }
+
+    body .todo-container button {
+        font-size: 1.6vh;
     }
 
 }

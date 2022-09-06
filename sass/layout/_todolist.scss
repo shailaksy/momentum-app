@@ -11,6 +11,10 @@
     justify-content: flex-end;
 }
 
+#todo-title button {
+    font-size: 2vh;
+}
+
 #todo-toggle-container {
     background-color: #23232381;
     padding: 5%;
@@ -44,4 +48,5 @@
 
 .todo-list span {
     padding: 8px;
+    font-size: 1.5vh;
 }

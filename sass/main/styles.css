@@ -17,8 +17,27 @@
   body #focus-container {
     padding-top: 20px;
   }
-  .todo-list li {
+  body #search {
+    margin: 2% 3%;
+  }
+  body #bottom-section {
+    margin: 0 2%;
+  }
+  body #quote-container,
+body #todo-title button {
+    font-size: 1.7vh;
+  }
+  body #todo-input-container {
+    padding-bottom: 0;
+  }
+  body .todo-list span {
     font-size: 1.3vh;
+  }
+  body #quote-menu i {
+    font-size: 2vh;
+  }
+  body .todo-container button {
+    font-size: 1.6vh;
   }
 }
 * {
@@ -112,6 +131,10 @@ input::placeholder {
   transform-origin: bottom left;
 }
 
+#quote-section i {
+  font-size: 3vh;
+}
+
 #quote-section:hover #quote-menu {
   transform: scale(1);
 }
@@ -165,7 +188,7 @@ input::placeholder {
   align-items: end;
   height: 93vh;
   padding-bottom: 1%;
-  font-size: 1.8vh;
+  font-size: 2.5vh;
 }
 
 #search {
@@ -240,10 +263,6 @@ input::placeholder {
   position: relative;
 }
 
-#quote-section i {
-  font-size: 3vh;
-}
-
 #quote-container {
   display: flex;
   flex-direction: column;
@@ -287,6 +306,10 @@ input::placeholder {
   justify-content: flex-end;
 }
 
+#todo-title button {
+  font-size: 2vh;
+}
+
 #todo-toggle-container {
   background-color: rgba(35, 35, 35, 0.5058823529);
   padding: 5%;
@@ -320,4 +343,5 @@ input::placeholder {
 
 .todo-list span {
   padding: 8px;
+  font-size: 1.5vh;
 }/*# sourceMappingURL=styles.css.map */
