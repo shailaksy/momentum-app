@@ -5,7 +5,6 @@ import {
 window.onload = backgroundRefresh()
 
 import {
-    search,
     searchInputField,
     searchToggleBtn,
     searchContainerToggle,
@@ -100,8 +99,6 @@ quoteInputField.addEventListener("keyup", function(event){
         addCustomQuote(localStorage.getItem("name"), quoteInputField.value)
     }
 })
-
-//////
 
 import {
     toDoToggle,
